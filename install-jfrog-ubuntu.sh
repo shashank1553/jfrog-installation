@@ -10,7 +10,7 @@ echo "################################################################"
 # Installing necessary packages
 echo "\n\n*****Installing necessary packages"
 sudo apt-get update -y > /dev/null 2>&1
-sudo apt-get install -y default-jre unzip > /dev/null 2>&1
+sudo apt-get install -y openjdk-17-jdk unzip > /dev/null 2>&1
 echo "            -> Done"
 
 # Configuring Artifactory as a Service
@@ -35,6 +35,7 @@ echo "            -> Done"
 echo "*****Starting Artifactory Service"
 sudo systemctl start artifactory 1>/dev/null
 
+sudo apt-get update -y
 
 # Check if Artifactory is working
 sudo systemctl is-active --quiet artifactory
